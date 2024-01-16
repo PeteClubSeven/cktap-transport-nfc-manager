@@ -34,10 +34,10 @@ class NfcManagerTransport implements Transport {
       var isoDep = IsoDep.from(tag);
       if (isoDep != null && isoDep.maxTransceiveLength > 0) {
         // Requires custom fork: https://github.com/PeteClubSeven/flutter-nfc-manager
-        /*// Ensure we have a valid timeout value for CKTapCard::Wait()
+        // Ensure we have a valid timeout value for CKTapCard::Wait()
         if (isoDep.initialTimeout < 2000) {
           isoDep.setTimeout(time: 2000);
-        }*/
+        }
         return NfcManagerTransport._internal(tag, isoDep, null);
       }
     } else if (Platform.isIOS) {

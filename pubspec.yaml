@@ -2,6 +2,7 @@ name: cktap_transport_nfc_manager
 description: An implementation of the cktap_transport package using the nfc_manager plugin
 version: 0.0.1
 license: MIT
+publish_to: none
 repository: https://github.com/PeteClubSeven/cktap-transport-nfc-manager
 funding:
   - https://app.mash.com/e/peteclubseven
@@ -14,7 +15,10 @@ dependencies:
   flutter:
     sdk: flutter
   cktap_transport: ^0.0.1
-  nfc_manager: ^3.3.0
+  nfc_manager:
+    git:
+      url: https://github.com/PeteClubSeven/flutter-nfc-manager
+      ref: 4a993ed513f3cc50b0d7efcadde9a864556f8003
 
 dev_dependencies:
   flutter_test:
