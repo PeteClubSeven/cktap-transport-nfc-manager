@@ -1,4 +1,4 @@
-group 'com.example.cktap_transport_nfc_manager'
+group 'io.flutter.plugins.cktap_transport_nfc_manager'
 version '1.0-SNAPSHOT'
 
 buildscript {

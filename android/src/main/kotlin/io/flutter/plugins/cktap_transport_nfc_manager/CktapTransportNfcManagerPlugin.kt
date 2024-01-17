@@ -1,0 +1,1 @@
+package io.flutter.plugins.cktap_transport_nfc_manager

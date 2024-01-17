@@ -1,1 +1,0 @@
-package com.example.cktap_transport_nfc_manager
