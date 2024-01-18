@@ -5,6 +5,8 @@ import 'package:cktap_transport/cktap_transport.dart';
 import 'package:nfc_manager/nfc_manager.dart';
 import 'package:nfc_manager/platform_tags.dart';
 
+export 'package:cktap_transport/cktap_transport.dart';
+
 /// Specifies the NFC specification used to communicate with a device
 enum NfcProtocol {
   none,
