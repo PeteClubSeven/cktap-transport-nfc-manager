@@ -1,3 +1,7 @@
+## 0.1.1
+
+* Fix incorrect instructions
+
 ## 0.1.0
 
 * Add iOS support

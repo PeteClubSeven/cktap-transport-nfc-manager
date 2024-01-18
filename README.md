@@ -19,11 +19,11 @@ dependencies:
   cktap_transport_nfc_manager:
     git:
       url: https://github.com/PeteClubSeven/cktap-transport-nfc-manager.git
-      branch: release/v3
+      ref: release/v3
   nfc_manager:
     git:
       url: https://github.com/PeteClubSeven/flutter-nfc-manager.git
-      branch: release/v3
+      ref: release/v3
 
   # Uses an unmodified version of nfc_manager
   cktap_transport_nfc_manager: ^0.1.0

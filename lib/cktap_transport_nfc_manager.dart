@@ -73,8 +73,9 @@ class NfcManagerTransport implements Transport {
           final response = await _iso7816!.sendCommandRaw(bytes);
 
           // Add the status words onto the end of the payload
-          var result = Uint8List(response.payload.length + 2);
-          result.setAll(0, response.payload.followedBy([response.statusWord1, response.statusWord2]));
+          final toAppend = [response.statusWord1, response.statusWord2];
+          var result = Uint8List(response.payload.length + toAppend.length);
+          result.setAll(0, response.payload.followedBy(toAppend));
           return result;
         }
       } catch (e) {
