@@ -1,3 +1,7 @@
+## 0.1.2
+
+* Export the `Transport` base class by default
+
 ## 0.1.1
 
 * Fix incorrect instructions

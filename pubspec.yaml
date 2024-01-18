@@ -1,6 +1,6 @@
 name: cktap_transport_nfc_manager
 description: An implementation of the cktap_transport package using the nfc_manager plugin
-version: 0.1.1
+version: 0.1.2
 license: MIT
 publish_to: none
 repository: https://github.com/PeteClubSeven/cktap-transport-nfc-manager
