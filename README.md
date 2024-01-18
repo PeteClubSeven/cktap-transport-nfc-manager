@@ -3,10 +3,9 @@
 An implementation of [cktap_transport](https://github.com/PeteClubSeven/cktap-transport) using the [nfc_manager](https://github.com/okadan/flutter-nfc-manager) plugin. This is currently designed for NFC Manager v3, when v4 is released this plugin will be reworked to support the new API.
 
 ## Platform Support
-
+Please use the `release/v3` branch or some devices may fail when performing the `CKTapCard.wait` command. The custom branch also allows you to update the NFC prompt text on iOS so you can provide a better UX.
 - [x] Android
-  - Please use the `bugfix/timeout-issues` branch or some devices may fail when performing the `CKTapCard.wait` command
-- [ ] iOS
+- [x] iOS
 
 ## Getting Started
 
@@ -20,10 +19,15 @@ dependencies:
   cktap_transport_nfc_manager:
     git:
       url: https://github.com/PeteClubSeven/cktap-transport-nfc-manager.git
-      ref: bugfix/timeout-issues
+      ref: release/v3
+  nfc_manager:
+    git:
+      url: https://github.com/PeteClubSeven/flutter-nfc-manager.git
+      ref: release/v3
 
-  # Uses an unmodified version of nfc_manager v3
-  cktap_transport_nfc_manager: ^0.0.1
+  # Uses an unmodified version of nfc_manager
+  cktap_transport_nfc_manager: ^0.1.0
+  nfc_manager: ^3.3.0
 ```
 
 ## Usage
@@ -40,7 +44,7 @@ void exampleFunction() {
   NfcManager.instance.startSession(
       onDiscovered: (NfcTag tag) async {
         // Create the transport from the given tag
-        NfcManagerTransport transport = NfcManagerTransport(tag);
+        final transport = NfcManagerTransport(tag);
         // Attempt to read the card, exceptions are thrown when errors occur
         CKTapCard card = await CKTapProtocol.readCard(transport);
         

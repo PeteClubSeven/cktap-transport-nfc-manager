@@ -69,6 +69,15 @@ class NfcManagerTransport implements Transport {
         if (_isoDep != null) {
           return await _isoDep!.transceive(data: bytes);
         }
+        if (_iso7816 != null) {
+          final response = await _iso7816!.sendCommandRaw(bytes);
+
+          // Add the status words onto the end of the payload
+          final toAppend = [response.statusWord1, response.statusWord2];
+          var result = Uint8List(response.payload.length + toAppend.length);
+          result.setAll(0, response.payload.followedBy(toAppend));
+          return result;
+        }
       } catch (e) {
         if (_isoDep != null && bytes.length > _isoDep!.maxTransceiveLength) {
           throw NfcTransceiveException(
