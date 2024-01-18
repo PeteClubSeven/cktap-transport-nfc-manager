@@ -5,7 +5,7 @@ An implementation of [cktap_transport](https://github.com/PeteClubSeven/cktap-tr
 ## Platform Support
 Please use the `release/v3` branch or some devices may fail when performing the `CKTapCard.wait` command. The custom branch also allows you to update the NFC prompt text on iOS so you can provide a better UX.
 - [x] Android
-- [ ] iOS
+- [x] iOS
 
 ## Getting Started
 
@@ -26,7 +26,7 @@ dependencies:
       branch: release/v3
 
   # Uses an unmodified version of nfc_manager
-  cktap_transport_nfc_manager: ^0.0.1
+  cktap_transport_nfc_manager: ^0.1.0
   nfc_manager: ^3.3.0
 ```
 
@@ -44,7 +44,7 @@ void exampleFunction() {
   NfcManager.instance.startSession(
       onDiscovered: (NfcTag tag) async {
         // Create the transport from the given tag
-        NfcManagerTransport transport = NfcManagerTransport(tag);
+        final transport = NfcManagerTransport(tag);
         // Attempt to read the card, exceptions are thrown when errors occur
         CKTapCard card = await CKTapProtocol.readCard(transport);
         

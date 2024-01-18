@@ -14,9 +14,9 @@ environment:
   flutter: ">=3.7.12"
 
 dependencies:
+  cktap_transport: ^0.1.0
   flutter:
     sdk: flutter
-  cktap_transport: ^0.0.1
   nfc_manager: ^3.3.0
 
 dev_dependencies:
